@@ -9,14 +9,20 @@ public class Employee_Wage {
         int Emphrs = 0;
         double wage;
         double MonthlyWage = 0;
-        for (int i=0;i<=20;i++)
+        int WorkingHours = 0;
+	    int WorkingDays = 0;
+
+
+	    while ( WorkingHours<=100 || WorkingDays<=20 )
         {
         	double EmpStatus = Math.floor(Math.random()*10)%3;
         	
         	switch ((int) EmpStatus) {
         	case fulltime:
         		Emphrs=8;
-        		break;
+        			//If WorkingHours=96, then 8+96=104 exceeds limit, so condition:
+        			if ( WorkingHours == 96 ) break;
+        			break;
         	case partime:
         		Emphrs=4;
         		break;
@@ -26,6 +32,7 @@ public class Employee_Wage {
             
         	wage = (20*EmpStatus)*Emphrs ;
         	MonthlyWage = MonthlyWage + wage ;
+        	WorkingDays++;
         }
    
         System.out.println("Monthly wages of Employee is " +MonthlyWage);
