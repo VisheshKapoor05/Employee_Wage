@@ -4,15 +4,23 @@ public class Employee_Wage {
 	
 	final int fulltime = 2 ;
 	final int partime = 1 ;
-    final int max_working_hours = 100;
-    final int max_working_days = 20;
+    private /*final*/ int max_working_hours;
+    private int max_working_days;
+	private String company_name;
     
     int Emphrs = 0;
     int wage=0;
     int MonthlyWage = 0;
     int WorkingHours = 0;
     int WorkingDays = 0;
+    
 	
+	public Employee_Wage(String company_name, int max_working_hours, int max_working_days) {
+		this.max_working_hours = max_working_hours;
+		this.max_working_days = max_working_days;
+		this.company_name = company_name;
+	}
+
 	public int computing_employee_wage(){
 		    
 	    while ( WorkingHours<=max_working_hours && WorkingDays<=max_working_days ) {
