@@ -13,8 +13,8 @@ public class Get_Employee_Wage {
 		System.out.print("Enter total number of companies: ");
 		int Num_of_companies = sc.nextInt();
 		
-		CompanyEmpWage[] companies_data = new CompanyEmpWage[Num_of_companies];
-		//ArrayList<Employee_Wage> companies_data = new ArrayList<>();
+		//CompanyEmpWage[] companies_data = new CompanyEmpWage[Num_of_companies];
+		ArrayList<CompanyEmpWage> companies_data = new ArrayList<>();
 		for(int i=0; i<Num_of_companies; i++)
 		{
 			System.out.print("Company Name: ");
@@ -28,13 +28,13 @@ public class Get_Employee_Wage {
 			
 			CompanyEmpWage company = new CompanyEmpWage(Company_Name, Max_Working_Hours, Max_Working_Days);
 			int MonthlyWage = company.emp_wage_builder();
-			companies_data[i] = company;
+			companies_data.add(company);
 			
 			System.out.println("Company:" +Company_Name +" and Monthly Wage: " +MonthlyWage);
 		}
 		
 		for(int i=0; i<Num_of_companies; i++) {
-			System.out.println(companies_data[i]);
+			System.out.println(companies_data.get(i));
 		}
 		
 	}
