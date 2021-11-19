@@ -37,6 +37,19 @@ public class Get_Employee_Wage {
 			System.out.println(companies_data.get(i));
 		}
 		
+		System.out.print("Company Name to get total wage: ");
+		String Company_Name = sc.next();
+		totalWage(companies_data, Company_Name);
+		
+	}
+	
+	public static void totalWage(ArrayList<CompanyEmpWage> companies_data, String Company_Name ) {
+		for(int i=0; i<companies_data.size(); i++) {
+			String index = companies_data.get(i).company_name;
+			if(index.equals(Company_Name)) {
+				System.out.println("Total Wage: " +companies_data.get(i).MonthlyWage);
+			}
+		}
 	}
 
 }
